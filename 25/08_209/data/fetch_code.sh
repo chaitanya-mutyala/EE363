@@ -1,7 +1,11 @@
 #!/bin/bash
-# Script to download code from public GitHub repo
+# Script to download the full EE363 repo and move to the desired directory
 
-echo "Cloning repository..."
-git clone https://github.com/spkkarri/EE363/tree/main/25/08_209
+echo "Cloning full repository..."
+git clone https://github.com/spkkarri/EE363.git
 
-echo "Done."
+echo "Navigating to target directory..."
+cd EE363/25/08_209
+
+echo "Done. You're now in:"
+pwd
