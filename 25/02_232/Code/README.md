@@ -2,20 +2,20 @@ Attention-based U-Net for Land Cover Segmentation
 
 This repository contains an implementation of an Attention-based U-Net model designed for semantic segmentation of various landforms from satellite imagery.
 
-Overview
+Overview:
 
 The `LightAttentionUNet` model processes satellite images (3-channel RGB) and outputs a 7-class segmentation map corresponding to different land cover types:
-Urban land
-Agriculture land
-Rangeland
-Forest land
-Water
-Barren land
-Unknown/background areas
+1.Urban land
+2.Agriculture land
+3.Rangeland
+4.Forest land
+5.Water
+6.Barren land
+7.Unknown/background areas
 
-Model Architecture
+Model Architecture:
 
-Downsampling Path (Encoder)
+Downsampling Path (Encoder):
 
 The encoder follows a progressively downsampling architecture:
 
@@ -30,7 +30,7 @@ The encoder follows a progressively downsampling architecture:
 
 The model uses gradient checkpointing for memory efficiency during training.
 
-Attention Mechanism
+Attention Mechanism:
 
 The attention gates are designed to highlight relevant features and suppress irrelevant ones:
 
@@ -42,7 +42,7 @@ The attention gates are designed to highlight relevant features and suppress irr
 
 3. Attention Focus: The attention gates learn to focus on specific regions in the feature maps that are most relevant for land cover classification.
 
- Upsampling Path (Decoder)
+ Upsampling Path (Decoder):
 
 The decoder gradually restores spatial resolution while incorporating contextual information:
 
@@ -54,15 +54,15 @@ The decoder gradually restores spatial resolution while incorporating contextual
    512 → 256 → 128 → 64 → 32 channels
    1/16 → 1/8 → 1/4 → 1/2 → original resolution
 
-Final Segmentation Output
+Final Segmentation Output:
 
 The final layer applies a 1×1 convolution to map the 32-channel feature space to 7 output channels. During inference, an argmax operation is applied to predict the most likely class for each pixel.
 
-Loss Function and Training
+Loss Function and Training:
 
 The model is trained using a combination of Cross-Entropy and Dice Loss, with class weights to handle class imbalance common in satellite imagery.
 
 The attention-based approach provides significant advantages over standard U-Net for land cover segmentation, as it helps the model to focus on relevant features while ignoring background noise.
 
-LINK TO VIDEO PRESENTATION 
+LINK TO VIDEO PRESENTATION : https://drive.google.com/file/d/10SPEkFdPNcF0JD2ijXnvwQfba3oq5SHX/view?usp=sharing
 
