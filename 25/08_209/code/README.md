@@ -102,8 +102,9 @@ Code/
 ### 1. Clone this repository
 
 ```bash
-git clone https://github.com/spkkarri/EE363/tree/main/25/08_209/Code.git
-cd sohprediction
+git clone https://github.com/spkkarri/EE363.git
+cd EE363/25/08_209/code
+
 ```
 
 ### 2. Install dependencies
